@@ -1,0 +1,15 @@
+# vim: filetype=neomuttrc
+
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+set sidebar_width = 30
+# set sidebar_short_path
+set sidebar_delim_chars = "/"
+set sidebar_folder_indent
+set sidebar_indent_string = " "
+
+set sidebar_visible
+bind index,pager \CP sidebar-prev       # Ctrl-Shift-P - Previous Mailbox
+bind index,pager \CN sidebar-next       # Ctrl-Shift-N - Next Mailbox
+bind index,pager N sidebar-toggle-visible # Ctrl-Shift-O - Open Highlighted Mailbox
+sidebar_whitelist Inbox

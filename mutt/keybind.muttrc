@@ -1,0 +1,3 @@
+# vim: filetype=muttrc
+
+bind index,pager \Cn sidebar-toggle-visible

@@ -1,0 +1,21 @@
+set realname = 'Patrick Allen'
+
+set editor = 'nvim'
+set charset = 'utf-8'
+
+# Seconds to wait to connect before timeout
+set timeout = 5
+
+# Check mail every :mail_check: seconds
+set mail_check = 1
+
+# Sort mail by reverse date by default
+set sort = reverse-threads
+set sort_browser = reverse-date
+set sort_aux = last-date-received
+
+source '~/.config/mutt/gmail.muttrc'
+source '~/.config/mutt/colors.muttrc'
+source '~/.config/mutt/sidebar.muttrc'
+source '~/.config/mutt/keybind.muttrc'
+

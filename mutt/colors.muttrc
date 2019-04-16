@@ -1,0 +1,51 @@
+# vim: filetype=neomuttrc
+
+color	normal 		color253	default
+color	error		white		red
+color	tilde		black		default
+color	message 	cyan		default
+color	tree		cyan		default
+color	markers 	red 		default
+color	status		white		color026
+
+color	index_flags	green		default '~N'
+
+color index 		white		default '~A'
+color index_date 	color251	default
+color index_size 	color128 	default
+color index_flags 	color088 	default '~A'
+color index_author 	white		default '~A'
+color	index_subject	color255	default '~A'
+# color 	index_size	color033	default
+# color 	index_number	color127	default
+# color 	index_date	color209	default
+# color 	index_author 	color140	default ~A
+# color 	index_subject 	color252	default ~A
+# 
+# ([a-zA-Z0-9]+[_+\.]?[a-zA-Z0-9]+@[a-zA-Z0-9\-]+\.[com|net|org|co|io]+)
+ 
+
+# -------------------------------------------------------------------------------
+# Name		| Description 						
+# --------------| -----------------------------------------------------------------
+# attachment	| Items that have attachments present in the message
+# body 	    	| Match regexp on the body of messages 			
+# bold	    	| Highlighting bold patterns in body of message
+# error	    	| Error mesages printed by mutt
+# header    	| Match regezp in the message header
+# hdrdefault	| Default color of the message header in the pager
+# index	    	| Match pattern in the message index
+# indicator 	| Arrow or bar used to indicate the current item in menu
+# markers   	| The "+" markers at the beginning of wrapped lines
+# message   	| Informational messages
+# normal    	| Normal not-quoted text
+# quote	    	| Text matching $quote_regezp in the body of a message
+# quoted1...N	| Multi-level quote highlighting
+# search	| Highlighting of words during search
+# signature	| Any text beneath the signature line
+# status	| Mode lines used to display info about the mailbox/message
+# tilde		| The "~" used to pad blank lines
+# tree		| Thread tree drawn in the message index and attachment menu
+# underline	| Hilighting of underlined patterns in body of message
+#
+set index_format = "%4C %Z [%{%b %d %R}] %-20.20L (%?l?%4l&%4c?) %s"
