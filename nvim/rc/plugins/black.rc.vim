@@ -1,1 +1,4 @@
-autocmd BufWritePost *.py execute ':Black'
+
+augroup black
+    autocmd BufWritePost *.py execute ':Black'
+augroup END

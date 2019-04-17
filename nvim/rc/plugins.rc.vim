@@ -10,7 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sbdchd/neoformat'
 
 " Toml
-Plug 'cespare/vim-toml' 
+Plug 'cespare/vim-toml'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -31,13 +31,26 @@ Plug 'ambv/black'
 
 " Mutt config highlighting
 Plug 'vim-scripts/muttrc.vim'
+Plug 'Shougo/neco-vim'
 
 call plug#end()
 
-exec 'source' . expand('~/.config/nvim/rc/plugins/black.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/deoplete.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/hardtime.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/jedi.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/neoformat.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/neomake.rc.vim')
-exec 'source' . expand('~/.config/nvim/rc/plugins/rust.rc.vim')
+let plugin_paths = [ 	  'plugins/black',
+			\ 'plugins/deoplete',
+			\ 'plugins/hardtime',
+			\ 'plugins/jedi',
+			\ 'plugins/neoformat',
+			\ 'plugins/neomake',
+			\ 'plugins/rust',
+			\ 'plugins/black',
+			\ 'plugins/deoplete',
+			\ 'plugins/hardtime',
+			\ 'plugins/jedi',
+			\ 'plugins/neoformat',
+			\ 'plugins/neomake',
+			\ 'plugins/rust',
+			\ ]
+
+for plugin in plugin_paths
+    call SmartSourceRc(plugin)
+endfor
