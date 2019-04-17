@@ -36,6 +36,7 @@ Plug 'Shougo/neco-vim'
 call plug#end()
 
 let plugin_paths = [ 	  'plugins/black',
+			\ 'plugins/fzf',
 			\ 'plugins/deoplete',
 			\ 'plugins/hardtime',
 			\ 'plugins/jedi',
