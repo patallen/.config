@@ -1,0 +1,62 @@
+source /usr/local/bin/antigen.zsh
+antigen bundle git
+antigen bundle gitfast
+# antigen bundle pip
+# antigen bundle lein
+# antigen bundle h
+antigen bundle fzf
+antigen bundle command-not-found
+#
+# # Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+#
+# # Load the theme.
+# antigen theme miloshadzic
+#
+# # Tell $(antigen) that you're done.
+antigen apply
+
+setopt PROMPT_SUBST
+
+source ~/.zfunctions/git-prompt.zsh
+source ~/.zfunctions/colors.zsh
+source ~/.alias.sh
+source ~/.envvars.sh
+source ~/.funcs.sh
+
+HIST_STAMPS="mm/dd/yyyy"
+
+
+bindkey -v;export KEYTIMEOUT=1
+
+export EDITOR='vim'
+
+
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+function ts() {
+    echo $(date -r $1)
+    echo $(date -ur $1)
+}
+
+export GPG_FINGERPRINT="C574619F53FCB6F619BA366510783BAC7D5AAA49"
+
+if [[ $GPG_FINGERPRINT ]]; then
+    export GPG_TTY=$(tty)
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    pgrep gpg-agent >/dev/null || exec $(gpg-agent --options $HOME/.gnupg/gpg-agent.conf --daemon)
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+export FZF_DEFAULT_OPTS='
+--color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+--color info:150,prompt:110,spinner:150,pointer:167,marker:174
+'
