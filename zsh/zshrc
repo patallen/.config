@@ -1,4 +1,5 @@
-source /usr/local/bin/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
+
 antigen bundle git
 antigen bundle gitfast
 # antigen bundle pip
@@ -19,11 +20,11 @@ antigen apply
 
 setopt PROMPT_SUBST
 
-source ~/.zfunctions/git-prompt.zsh
-source ~/.zfunctions/colors.zsh
-source ~/.alias.sh
-source ~/.envvars.sh
-source ~/.funcs.sh
+# source ~/.zfunctions/git-prompt.zsh
+# source ~/.zfunctions/colors.zsh
+source ~/.config/scripts/alias.sh
+source ~/.config/scripts/envvars.sh
+source ~/.config/scripts/funcs.sh
 
 HIST_STAMPS="mm/dd/yyyy"
 
@@ -42,13 +43,13 @@ function ts() {
     echo $(date -ur $1)
 }
 
-export GPG_FINGERPRINT="C574619F53FCB6F619BA366510783BAC7D5AAA49"
+# export GPG_FINGERPRINT="C574619F53FCB6F619BA366510783BAC7D5AAA49"
 
-if [[ $GPG_FINGERPRINT ]]; then
-    export GPG_TTY=$(tty)
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-    pgrep gpg-agent >/dev/null || exec $(gpg-agent --options $HOME/.gnupg/gpg-agent.conf --daemon)
-fi
+# if [[ $GPG_FINGERPRINT ]]; then
+#     export GPG_TTY=$(tty)
+#     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#     pgrep gpg-agent >/dev/null || exec $(gpg-agent --options $HOME/.gnupg/gpg-agent.conf --daemon)
+# fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -60,3 +61,4 @@ export FZF_DEFAULT_OPTS='
 --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
 --color info:150,prompt:110,spinner:150,pointer:167,marker:174
 '
+export FZF_BASE=/usr/local/opt/fzf/install
